@@ -1,0 +1,54 @@
+<title>Interactive Model of a NAND Gate Input-Output Circuit with a Set Bit</title>
+<center><em>Click on the two left-most words to change the circuit</em></center>
+<script language="JavaScript">
+function on_or_off(whoami,whatami)
+{
+current_state = document.getElementById(whoami).innerHTML;
+if (current_state == 'ON') {   document.getElementById(whoami).innerHTML = "OFF" }
+else {  document.getElementById(whoami).innerHTML = "ON" }; 
+
+	if (   document.getElementById('input').innerHTML == "ON" &&  	document.getElementById('setbit').innerHTML == "ON"  )
+	{
+		document.getElementById('gate1').innerHTML = "OFF"		
+	}  else 
+	{ document.getElementById('gate1').innerHTML = "ON"		 }
+
+
+	if (   document.getElementById('gate1').innerHTML == "ON" &&  	document.getElementById('setbit').innerHTML == "ON"  )
+	{
+		document.getElementById('gate2').innerHTML = "OFF"		
+	}  else 
+	{ document.getElementById('gate2').innerHTML = "ON"		 };
+
+	if (   document.getElementById('gate1').innerHTML == "ON" &&  	document.getElementById('gate2').innerHTML == "ON"  )	
+	{return};
+
+
+	if (   document.getElementById('gate1').innerHTML == "ON" &&  	document.getElementById('gate2').innerHTML == "OFF"  )
+	{
+		document.getElementById('output').innerHTML = "OFF"		
+	}  else 
+	{ 
+	if (   document.getElementById('gate1').innerHTML == "OFF" &&  	document.getElementById('gate2').innerHTML == "ON"  )	{document.getElementById('output').innerHTML = "ON"	}
+	};
+
+
+}
+
+
+
+
+</script>
+<div id="input" style="color:red;font-weight:bold;font-size:32px;font-family:Arial;
+position:relative;top:170px;left:45px" onClick="on_or_off('input',1)">ON</div>
+
+<div id="output" style="color:red;font-weight:bold;font-size:32px;font-family:Arial;
+position:relative;top:180px;left:950px">ON</div>
+
+
+<div id="gate1" style="color:red;font-weight:bold;font-size:32px;font-family:Arial;
+position:relative;top:170px;left:360px" onClick="switched_on_or_off('gate1',1)">OFF</div>
+<img src="D3.png">
+<div id="setbit" style="color:red;font-weight:bold;font-size:32px;font-family:Arial;position:relative;top:-260px;left:45px" onClick="on_or_off('setbit',0)">ON</div>
+
+<div style="color:red;font-weight:bold;font-size:32px;font-family:Arial;position:relative;top:-357px;left:535px" id="gate2" >ON</div>
