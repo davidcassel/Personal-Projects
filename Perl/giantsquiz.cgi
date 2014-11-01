@@ -27,7 +27,7 @@ $all_answers = substr($guessed,$startq+2,299);
 print "
 <center><BR><BR>
 
-<img src=\"San Francisco Giants NLCS.jpg\" width=200px>
+<img src=\"http://www.destinyland.org/cgi-bin/San%20Francisco%20Giants%20NLCS.jpg\" width=200px>
 <h3><em>Which San Francisco Giant are You?</em></h3></center>
 </div>
 
